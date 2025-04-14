@@ -22,13 +22,18 @@ function calculateInterval(duration) {
  * @param {string} vttFilePath - The path of the .vtt file to be generated.
  */
 exports.generateFrames = (videoPath, outputFolder, vttFilePath) => {
+  // Verifica se a pasta de saída existe, se não, cria
+  if (!fs.existsSync(outputFolder)) {
+    fs.mkdirSync(outputFolder, { recursive: true });
+    console.log(`folder created: ${outputFolder}`);
+  }
+
   ffmpeg.ffprobe(videoPath, (err, metadata) => {
     if (err) {
       console.error("Error obtaining video metadata:", err);
       return;
     }
 
-    /** @type {number} */
     const duration = metadata.format.duration;
     const interval = calculateInterval(duration);
 
@@ -41,7 +46,7 @@ exports.generateFrames = (videoPath, outputFolder, vttFilePath) => {
       .output(outputPattern)
       .outputOptions([
         "-vf",
-        `scale=160:90,fps=1/${interval}`, // Combine filters to avoid conflicts
+        `scale=160:90,fps=1/${interval}`,
         "-vsync",
         "0",
       ])
