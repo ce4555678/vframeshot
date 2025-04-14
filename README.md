@@ -65,20 +65,6 @@ frames/frame-0002.png
 ## 🔧 Prerequisites
 
 - Node.js 12+
-- FFmpeg installed on the system
-
-### FFmpeg Installation
-
-```bash
-# Debian/Ubuntu
-sudo apt install ffmpeg
-
-# macOS
-brew install ffmpeg
-
-# Windows
-choco install ffmpeg
-```
 
 ## 🎮 Video.js Integration Example
 
