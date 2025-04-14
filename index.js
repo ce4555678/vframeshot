@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const ffmpegPath = require("ffmpeg-static");
 
-ffmpeg.setFfmpegPath(ffmpegPath);
+fs.chmodSync(ffmpegPath, 0o755);
 
 /**
  * Calculates the interval based on the video duration.
@@ -48,6 +48,10 @@ exports.generateFrames = (videoPath, outputFolder, vttFilePath) => {
     ffmpeg(videoPath)
       .output(outputPattern)
       .outputOptions(["-vf", `scale=160:90,fps=1/${interval}`, "-vsync", "0"])
+      .on("progress", function (progress) {
+        process.stdout.write( `\r[FFmpeg] Time: ${progress.timemark} | Frames: ${progress.frames}`
+        );
+      })
       .on("end", function () {
         console.log("Frames generated successfully!");
         generateWebVTT(outputFolder, vttFilePath, interval);
