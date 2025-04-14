@@ -95,7 +95,3 @@ const player = videojs('my-player', {
 ```
 
 ```
-
-## 📄 License
-
-MIT © Carlos Eduardo
