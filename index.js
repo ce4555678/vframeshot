@@ -53,7 +53,7 @@ exports.generateFrames = (videoPath, outputFolder, vttFilePath) => {
         );
       })
       .on("end", function () {
-        console.log("Frames generated successfully!");
+        console.log(" Frames generated successfully!");
         generateWebVTT(outputFolder, vttFilePath, interval);
       })
       .on("error", function (err) {
