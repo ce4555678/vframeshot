@@ -1,0 +1,32 @@
+{
+  "name": "vframeshot",
+  "version": "1.0.1",
+  "description": "A package to extract frames from videos and generate WebVTT files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ce4555678/vframeshot.git"
+  },
+  "author": "Carlos Eduardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ce4555678/vframeshot/issues"
+  },
+  "homepage": "https://github.com/ce4555678/vframeshot#readme",
+  "keywords": [
+    "video",
+    "ffmpeg",
+    "webvtt",
+    "frames"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@10.8.1",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}
