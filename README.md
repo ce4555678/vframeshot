@@ -2,10 +2,9 @@
 Automatically extract video frames and generate WebVTT files for thumbnail previews. Perfect for video players with timeline hover, dynamic thumbnails, and video indexing systems.
 
 🚀 Installation
-bash
-Copiar
-Editar
+
 npm install vframeshot
+
 📦 Description
 vframeshot is a lightweight Node.js utility that uses FFmpeg to extract video frames at smart intervals based on the total video duration. It also generates a .vtt (WebVTT) file compatible with modern video players that support visual previews.
 
@@ -18,10 +17,9 @@ Video Duration	Frame Interval
 10–30 minutes	every 10 seconds
 30–60 minutes	every 20 seconds
 > 60 minutes	every 30 seconds
+
 🛠️ Usage
-js
-Copiar
-Editar
+
 const { generateFrames } = require('vframeshot');
 
 const videoPath = 'videos/my-video.mp4';
@@ -36,9 +34,7 @@ A sequence of images: frame-0001.png, frame-0002.png, ...
 A .vtt file synchronized with the images for use in preview-enabled video players (e.g. video.js).
 
 📂 Output Example
-css
-Copiar
-Editar
+
 frames/
 ├── frame-0001.png
 ├── frame-0002.png
@@ -53,17 +49,14 @@ FFmpeg (must be installed and available in your system PATH)
 
 To install FFmpeg:
 
-bash
-Copiar
-Editar
 # Debian/Ubuntu
 sudo apt install ffmpeg
 
 # macOS (via Homebrew)
 brew install ffmpeg
 
-# Windows
 https://ffmpeg.org/download.html
+
 📄 License
 MIT © Carlos Eduardo
 
